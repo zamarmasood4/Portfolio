@@ -103,6 +103,7 @@ header ul li a.active {
 .imgBox img {
   width: 500px;
   animation: animate 5s linear infinite;
+  border-radius: 10%;
 }
 @keyframes animate {
   0%,
