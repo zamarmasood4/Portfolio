@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Add this line for static export
+  // Required for Netlify
+  output: 'standalone', // Changed from 'export' to 'standalone' for better compatibility
+  
   typescript: {
     ignoreBuildErrors: true,
   },
+  
   images: {
     unoptimized: true,
   },
-  // Optional: Add trailing slash for better compatibility
+  
+  // Enable for better routing
   trailingSlash: false,
+  
+  // Disable powered by header
+  poweredByHeader: false,
 }
 
-export default nextConfig;
+export default nextConfig
