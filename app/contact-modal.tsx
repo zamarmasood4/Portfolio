@@ -16,22 +16,22 @@ export default function ContactModal({ children }: { children: React.ReactNode }
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:hello@example.com",
-      username: "hello@example.com",
+      href: "mailto:zamarmasood4@gmail.com",
+      username: "zamarmasood4@gmail.com",
       color: "hover:bg-red-500/20 hover:border-red-500/50",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourprofile",
-      username: "@yourprofile",
+      href: "https://www.linkedin.com/in/zamar-masood-06b1942b3/",
+      username: "zamar-masood",
       color: "hover:bg-blue-500/20 hover:border-blue-500/50",
     },
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/yourprofile",
-      username: "@yourprofile",
+      href: "https://github.com/zamarmasood4",
+      username: "@zamarmasood4",
       color: "hover:bg-gray-500/20 hover:border-gray-500/50",
     },
     {
@@ -44,15 +44,15 @@ export default function ContactModal({ children }: { children: React.ReactNode }
     {
       name: "Instagram",
       icon: Instagram,
-      href: "https://instagram.com/yourprofile",
-      username: "@yourprofile",
+      href: "https://instagram.com/zamar_masood4",
+      username: "@zamar_masood4",
       color: "hover:bg-pink-500/20 hover:border-pink-500/50",
     },
     {
       name: "WhatsApp",
       icon: MessageCircle,
-      href: "https://wa.me/1234567890",
-      username: "+1 234 567 890",
+      href: "https://wa.me/03015894547",
+      username: "+923015894547",
       color: "hover:bg-green-500/20 hover:border-green-500/20",
     },
   ]
