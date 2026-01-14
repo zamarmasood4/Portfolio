@@ -64,7 +64,7 @@ export default function ContactModal({ children }: { children: React.ReactNode }
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
+              placeholder="zamarmasood4@gmail.com"
               required
               className="bg-[#012E40] border-[#025464] text-white placeholder-gray-500"
             />
