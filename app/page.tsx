@@ -145,7 +145,7 @@ export default function Portfolio() {
         <Hero />
 
         {/* Featured and Projects Section */}
-        <section id="projects" className="light-section rounded-[2.5rem] bg-white text-gray-900 overflow-hidden shadow-2xl">
+        <section  className="light-section rounded-[2.5rem] bg-white text-gray-900 overflow-hidden shadow-2xl">
           {/* Featured Section */}
           <div id="about" className="py-24 md:py-32 px-6 relative overflow-hidden">
             {/* Background Number */}
@@ -317,9 +317,9 @@ export default function Portfolio() {
           </div>
 
           {/* Recent Projects */}
-          <div className="light-section py-24 md:py-32 px-6 relative overflow-hidden bg-white">
+          <div id="projects" className="light-section py-24 md:py-32 px-6 relative overflow-hidden bg-white">
             {/* Background Number */}
-            <div className="absolute top-20 left-0 text-[12rem] md:text-[20rem] font-bold text-gray-200/40 leading-none select-none pointer-events-none">
+            <div id="projects" className="absolute top-20 left-0 text-[12rem] md:text-[20rem] font-bold text-gray-200/40 leading-none select-none pointer-events-none">
               03
             </div>
 
