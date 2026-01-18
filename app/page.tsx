@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowUpRight, MonitorSmartphone, Code, PenTool, Eye, Github, Twitter, Linkedin, Instagram, CheckCircle2, Monitor, Server, Database } from "lucide-react"
+import { ArrowUpRight, MonitorSmartphone, Code, PenTool, Eye, Github, Twitter, Linkedin, Instagram, CheckCircle2, Monitor, Server, Database, MessageCircle, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Hero from "@/app/hero"
 import { Space_Grotesk } from "next/font/google"
@@ -12,6 +12,30 @@ import { motion } from "framer-motion"
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export default function Portfolio() {
+    const socialLinks = [
+
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/zamar-masood-06b1942b3/",
+      username: "zamar-masood",
+      color: "hover:bg-blue-500/20 hover:border-blue-500/50",
+    },
+    {
+      name: "GitHub",
+      icon: Github,
+      href: "https://github.com/zamarmasood4",
+      username: "@zamarmasood4",
+      color: "hover:bg-gray-500/20 hover:border-gray-500/50",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      href: "https://instagram.com/zamar_masood4",
+      username: "@zamar_masood4",
+      color: "hover:bg-pink-500/20 hover:border-pink-500/50",
+    },
+  ]
   const projects = [
     {
       title: "AI Powered Smart Search Platform",
@@ -324,51 +348,67 @@ export default function Portfolio() {
                 </Link>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 gap-8 relative z-10">
-                {projects.map((project, index) => (
-                  <motion.div
-                    key={index}
-                    className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={600}
-                      height={400}
-                      className="object-cover w-full aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-teal-400 mb-2 font-medium text-sm">{project.category}</p>
-                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                        <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span key={techIndex} className="bg-white/10 text-white/80 px-2 py-1 rounded-full text-xs">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        {project.link && (
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2 text-sm transition-colors duration-300">
-                              View Project <ArrowUpRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </a>
-                        )}
+<div className="grid md:grid-cols-2 gap-8 relative z-10">
+  {projects.map((project, index) => (
+    <motion.div
+      key={index}
+      className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Image
+        src={project.image || "/placeholder.svg"}
+        alt={project.title}
+        width={600}
+        height={400}
+        className="object-cover w-full aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+      />
 
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          
+          <p className="text-teal-400 mb-2 font-medium text-sm">
+            {project.category}
+          </p>
+
+          <h3 className="text-2xl font-bold text-white mb-2">
+            {project.title}
+          </h3>
+
+          <p className="hidden md:block text-gray-300 text-sm mb-4">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="bg-white/10 text-white/80 px-2 py-1 rounded-full text-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2 text-sm transition-colors duration-300">
+                View Project <ArrowUpRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          )}
+
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
             </div>
           </div>
         </section>
@@ -414,12 +454,26 @@ export default function Portfolio() {
               </ContactModal>
             </motion.div>
             <div className="flex flex-col gap-6 absolute top-1/2 -translate-y-1/2 right-6 md:right-12">
-              {[Github, Twitter, Linkedin, Instagram].map((Icon, index) => (
-                <a key={index} href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                  <Icon size={36} className="hover:scale-110 transition-transform duration-300" />
-                </a>
-              ))}
-            </div>
+<div className="hidden md:flex flex-col gap-6 absolute top-1/2 -translate-y-1/2 right-6 md:right-12">
+  {socialLinks.map(({ icon: Icon, href, name }) => (
+    <a
+      key={name}
+      href={href}
+      target={name === "Email" ? "_self" : "_blank"}
+      rel={name === "Email" ? undefined : "noopener noreferrer"}
+      className="text-white/60 hover:text-white transition-colors duration-300"
+      aria-label={name}
+    >
+      <Icon
+        size={36}
+        className="hover:scale-110 transition-transform duration-300"
+      />
+    </a>
+  ))}
+</div>
+
+</div>
+
           </div>
         </section>
 

@@ -113,53 +113,67 @@ export default function ProjectsPage() {
             <div className="absolute top-20 left-0 text-[12rem] md:text-[20rem] font-bold text-gray-200/40 leading-none select-none pointer-events-none">
 
             </div>
-            <div className="max-w-[1400px] mx-auto">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-                {projects.map((project, index) => (
-                  <motion.div
-                    key={index}
-                    className="group relative overflow-hidden rounded-3xl bg-gray-50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={600}
-                      height={400}
-                      className="object-cover w-full aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-teal-400 mb-2 font-medium text-sm">{project.category}</p>
-                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                        <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span key={techIndex} className="bg-white/10 text-white/80 px-2 py-1 rounded-full text-xs">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        {project.link && (
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2 text-sm transition-colors duration-300">
-                              View Project <ArrowUpRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </a>
-                        )}
+<div className="grid md:grid-cols-2 gap-8 relative z-10">
+  {projects.map((project, index) => (
+    <motion.div
+      key={index}
+      className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Image
+        src={project.image || "/placeholder.svg"}
+        alt={project.title}
+        width={600}
+        height={400}
+        className="object-cover w-full aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+      />
 
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          
+          <p className="text-teal-400 mb-2 font-medium text-sm">
+            {project.category}
+          </p>
+
+          <h3 className="text-2xl font-bold text-white mb-2">
+            {project.title}
+          </h3>
+
+          <p className="hidden md:block text-gray-300 text-sm mb-4">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="bg-white/10 text-white/80 px-2 py-1 rounded-full text-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2 text-sm transition-colors duration-300">
+                View Project <ArrowUpRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          )}
+
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
           </div>
         </section>
 
