@@ -9,69 +9,69 @@ import { motion } from "framer-motion"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
-const projects = [
-  {
-    title: "Mobile App Design",
-    image: "/placeholder.svg",
-    category: "UI/UX Design",
-    description: "Intuitive and engaging mobile app interface design for a fitness tracking application.",
-    technologies: ["Figma", "Sketch", "Adobe XD"],
-  },
-  {
-    title: "E-commerce Website",
-    image: "/placeholder.svg",
-    category: "Web Development",
-    description: "Fully responsive e-commerce platform with seamless user experience and secure payment integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-  },
-  {
-    title: "Brand Identity",
-    image: "/placeholder.svg",
-    category: "Branding",
-    description:
-      "Comprehensive brand identity design including logo, color palette, and brand guidelines for a tech startup.",
-    technologies: ["Adobe Illustrator", "Adobe InDesign"],
-  },
-  {
-    title: "Social Media Dashboard",
-    image: "/placeholder.svg",
-    category: "UI/UX Design",
-    description:
-      "Centralized dashboard for managing multiple social media accounts with analytics and scheduling features.",
-    technologies: ["Figma", "React", "D3.js"],
-  },
-  {
-    title: "AI-Powered Chatbot",
-    image: "/placeholder.svg",
-    category: "Development",
-    description:
-      "Intelligent chatbot using natural language processing to provide customer support for an online service.",
-    technologies: ["Python", "TensorFlow", "Flask", "React"],
-  },
-  {
-    title: "Virtual Reality Game",
-    image: "/placeholder.svg",
-    category: "Game Development",
-    description:
-      "Immersive VR game set in a futuristic world, featuring interactive environments and physics-based puzzles.",
-    technologies: ["Unity", "C#", "Oculus SDK"],
-  },
-  {
-    title: "Blockchain Wallet",
-    image: "/placeholder.svg",
-    category: "Blockchain",
-    description: "Secure and user-friendly cryptocurrency wallet supporting multiple chains and DeFi integrations.",
-    technologies: ["React Native", "Solidity", "Web3.js"],
-  },
-  {
-    title: "IoT Home Automation",
-    image: "/placeholder.svg",
-    category: "IoT",
-    description:
-      "Smart home system connecting various IoT devices for automated climate control, security, and energy management.",
-    technologies: ["Raspberry Pi", "Python", "MQTT", "React"],
-  },
-]
+  const projects = [
+    {
+      title: "AI Powered Smart Search Platform",
+      image: "/search.png",
+      category: "AI Full Stack Web Application",
+      description:
+        "Unified AI driven search platform for jobs products and opportunities using web scraping and intelligent recommendations with real time analytics and scalable backend",
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+        "Gemini AI API",
+        "Web Scraping",
+        "AWS EC2"
+      ],
+      link: "https://mysearchai.vercel.app/"
+    },
+    {
+      title: "AI Study Genius",
+      image: "/study.png",
+      category: "AI Learning Platform",
+      description:
+        "AI powered study assistant offering quiz generation OCR based learning exam prediction and real time collaboration for students",
+      technologies: [
+        "Flask",
+        "Gemini API",
+        "ChatGPT API",
+        "OCR",
+        "WebSocket"
+      ],
+      link: "https://thestudymate.netlify.app/"
+    },
+    {
+      title: "Gold Investment Platform",
+      image: "/gold.png",
+      category: "FinTech Web Platform",
+      description:
+        "Secure investment platform with real time transactions automated portfolio management KYC verification live chat and admin analytics dashboards",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Supabase",
+        "WebSocket",
+        "NOWPayments API"
+      ],
+      link: "https://mygoldinvest.netlify.app/"
+    },
+    {
+      title: "CSpedia",
+      image: "/cs.png",
+      category: "Educational Resource Platform",
+      description:
+        "Centralized academic resource platform enabling students to access past papers lecture notes and lab materials through a clean responsive interface",
+      technologies: [
+        "React",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      link: "https://thecspedia.netlify.app/"
+    }
+
+  ]
 
 export default function ProjectsPage() {
   return (
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
             <Link href="/">
               <Button
                 variant="outline"
-          className="rounded-full border border-white/20 text-white bg-white/10 hover:bg-white/20 px-10 py-6 text-base font-light"
+                className="rounded-full border border-white/20 text-white bg-white/10 hover:bg-white/20 px-10 py-6 text-base font-light"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
               </Button>
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
         <section className="rounded-[2.5rem] bg-white text-gray-900 overflow-hidden shadow-2xl">
           <div className="py-24 md:py-32 px-6 relative overflow-hidden">
             <div className="absolute top-20 left-0 text-[12rem] md:text-[20rem] font-bold text-gray-200/40 leading-none select-none pointer-events-none">
-              
+
             </div>
             <div className="max-w-[1400px] mx-auto">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
@@ -142,9 +142,18 @@ export default function ProjectsPage() {
                             </span>
                           ))}
                         </div>
-                        <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2 text-sm transition-colors duration-300">
-                          View Project <ArrowUpRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2 text-sm transition-colors duration-300">
+                              View Project <ArrowUpRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </a>
+                        )}
+
                       </div>
                     </div>
                   </motion.div>
@@ -156,26 +165,26 @@ export default function ProjectsPage() {
 
         {/* CTA Section */}
         <section className="relative py-24 md:py-32 px-6 overflow-hidden rounded-[2.5rem]">
-<div className="absolute inset-0 overflow-hidden">
-  {/* Background Video */}
-  <video
-    className="absolute inset-0 w-full h-full object-cover"
-    src="/bg.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Background Video */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src="/bg.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
 
-  {/* Gradient Overlay */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background:
-        'linear-gradient(to bottom, rgba(1,21,32,0.7), rgba(1,21,32,0.5))',
-    }}
-  />
-</div>
+            {/* Gradient Overlay */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(to bottom, rgba(1,21,32,0.7), rgba(1,21,32,0.5))',
+              }}
+            />
+          </div>
 
           <div className="max-w-[1400px] mx-auto relative z-10">
             <motion.div
