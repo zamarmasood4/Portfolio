@@ -222,12 +222,15 @@ export default function Hero() {
           I'm a Full Stack Web Developer with 1+ years of experience building modern, scalable web applications.
         </p>
 
-        <Button
-          variant="outline"
-          className="rounded-full border border-white/20 text-white bg-white/10 hover:bg-white/20 px-10 py-6 text-base font-light"
-        >
-          Download CV
-        </Button>
+        <a href="/Zamar_Resume.pdf" download>
+  <Button
+    variant="outline"
+    className="rounded-full border border-white/20 text-white bg-white/10 hover:bg-white/20 px-10 py-6 text-base font-light"
+  >
+    Download CV
+  </Button>
+</a>
+
 
         {/* Rotating Circle */}
         <div className="absolute -bottom-20 left-1/2 -translate-x-1/2">
